@@ -1,18 +1,38 @@
-const formLogin = document.getElementById('login')
-const inputemail = document.getElementById('email')
-const inputpassword = document.getElementById('password')
+const loginForm = document.getElementById('loginForm');
 
-formLogin.addEventListener('submit', (e)=>{
-    e.preventDefault()
-    fetch ('api/session/login',{
-        method:'post', 
-        headers:{
-             'Content-Type':'aplication/json',
-        },
-        body: JSON.stringify({userEmail:inputemail.value, password:inputpassword.value}),
-    }).then (res => res.json()).then(data=>{
-        window.alert(`Bienvenido ${data.userEmail}`)
-    }).catch((error) =>{
-        window.alert('error al iniciar Session')
-    })
-})
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(loginForm));
+  fetch('/api/session/login', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: { 'Content-type': 'application/json' },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      
+       if (data){
+        console.log("esta"+data)
+       }else{
+        console.log("no esta" +data)
+       }
+
+
+
+
+    //     if (data == null ) {
+    //     Swal.fire('Usuario o Password Incorrecto')
+    //     setTimeout(function () {
+    //         location.replace('/login');
+    //       }, 3000);
+    //   } else {
+    //     Swal.fire({
+    //         icon: 'success',
+    //         title: `Bienvenido ${data.firstName + '' + data.lastName}`,
+    //         showConfirmButton: false,
+    //       });
+    // }
+
+    });
+  
+});

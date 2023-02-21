@@ -1,15 +1,18 @@
-<h1>Login</h1>
-
-<form id="login" class="container">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label" >Password</label>
-    <input type="password" class="form-control" id="password">
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
-
+<main id="loginMain">
+  <section class="loginSection">
+    <div class="loginDiv">
+      <span class="logo"></span>
+      <h1 class="loginTitle">Login</h1>
+      <form class="loginForm" id="loginForm">
+        <label>Correo electrónico</label>
+        <input name="email" placeholder="email@gmail.com" />
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="********" />
+        <button class="loginButton">Login</button>
+      </form>
+      <a href="/register" style="margin: 20px 0; color: #ffff;">Registrate aqui</a>
+    </div>
+  </section>
+</main>
 <script src="/js/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

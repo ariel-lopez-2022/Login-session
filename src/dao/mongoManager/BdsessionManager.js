@@ -2,16 +2,19 @@ const userModel = require ('../models/user.model')
 
 class BdsessionManager {
    
-  getSession = async (userEmail, password) => {
-      return await userModel.findOne({userEmail, password});
+  getSession = async (email, password) => {
+      return await userModel.findOne({email, password});
     
   }
   
   
 
-  createSession = async (firstname, lastname, userEmail, password)=>{
-
-    return await userModel.create({firstname, lastname, userEmail, password})
+  createSession = async (firstName,lastName, email, password)=>{
+    console.log(firstName)
+    console.log(lastName)
+    console.log(email)
+    console.log(password)
+    return await userModel.create({firstName,lastName, email, password})
   }
 }
   module.exports = new BdsessionManager
