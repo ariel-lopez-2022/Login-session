@@ -11,16 +11,13 @@ registerForm.addEventListener("submit", (evt) => {
     headers: {
       "Content-type": "application/json",
     },
-  }).then((res) => res.json())
-    .then((res) => {
-      if (res.error) {
-        registerForm.firstChild.textContent = `${res.error}`;
-        console.log(res.error);
-        return;
-      } else {
-        console.log(res);
-        location.assign("http://localhost:8080/login");
-        return;
-      }
-    });
+  })
+  .then((res) => res.json())
+  .then((data) => {
+    window.alert(`Usuario creado`);
+    window.location.href = '/login';
+  })
+  .catch((err) => {
+    window.alert('Error al crear usuario');
+  });
 });

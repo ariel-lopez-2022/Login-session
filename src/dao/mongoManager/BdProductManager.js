@@ -5,7 +5,7 @@ class BdProductManager {
     return await productModel.create(product);
   
 }
-  getProduct = async (page = 1, limit = 10 , sort = '', query ={}) => {
+  getProduct = async (page = 1, limit = 6 , sort = '', query ={}) => {
       return  await productModel.paginate(query, { page, limit, sort:{price:sort}});
   }
 

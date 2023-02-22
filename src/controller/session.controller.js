@@ -6,16 +6,14 @@ const sessionLogin = async (req,res)=>{
            
      const {email, password} = req.body
      const user =await BdsessionManager.getSession(email, password)
-       
-      if(!user){
-        return res.status(401).json({
-           user
-          })
-        }
-       
-        return res.status(201).json({
-          user
-         })
+     
+     if (user) {
+      req.session.user = user;
+      res.send(user);
+    } else {
+      res.status(401).send('Email o contraseña incorrectos');
+    }
+  
 
     } catch (error) {
      return res.status(500).json({
