@@ -18,7 +18,10 @@ loginForm.addEventListener('submit', (e) => {
       confirmButtonText: 'OK'
     }).then((result) => {
       if (result.isConfirmed) {
+        
+       // res.render('products', {data}) esto me da error por que no esta res definido
         window.location.href = '/products';
+        
       }
     })
  

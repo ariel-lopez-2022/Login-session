@@ -38,9 +38,9 @@ server.use(
    store: connectMongo.create({
        mongoUrl:'mongodb+srv://admin:w4Y4edtwtiZzRK6R@cluster0.7xcckea.mongodb.net/?retryWrites=true&w=majority',
        mongoOptions:{
-       useNewUrlParser:true,
-       useUniFiedTopology:true
-      },
+          useNewUrlParser:true,
+          useUniFiedTopology:true
+           },
       ttl:30,
     }),
   secret: 'secret',

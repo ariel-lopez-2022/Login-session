@@ -13,7 +13,7 @@ const btnLogout = document.getElementById('logout');
           }).then((result) => {
             if (result.isConfirmed) {
                 location.assign("http://localhost:8080/login");
-             
+                 
             }
         })
           })

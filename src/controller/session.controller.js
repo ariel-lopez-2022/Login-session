@@ -33,7 +33,7 @@ const loginRegister = async (req,res)=>{
         rol:"administrador"
        }
        const users = await BdsessionManager.createSession(userAdmin) 
-       req.session.user = users
+       
               
       }
         const user = {
@@ -44,10 +44,7 @@ const loginRegister = async (req,res)=>{
           rol:"users"
          }
        const users = await BdsessionManager.createSession(user) 
-       req.session.user = users
-         
-      console.log(users)
-      return res.json({user}) 
+       return res.json(users) 
       
 
     } catch (error) {
