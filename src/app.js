@@ -41,7 +41,7 @@ server.use(
           useNewUrlParser:true,
           useUniFiedTopology:true
            },
-      ttl:30,
+      
     }),
   secret: 'secret',
   resave: true,

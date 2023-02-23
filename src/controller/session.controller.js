@@ -2,12 +2,11 @@ const BdsessionManager = require('../dao/mongoManager/BdsessionManager')
 
 const sessionLogin = async (req,res)=>{
    try {
-           
      const {email, password} = req.body
      const user =await BdsessionManager.getSession(email, password)
      if (user) {
-      req.session.user = user;
-      res.send(user);
+      req.session.firstName =  user.firstName.toUpperCase();
+          res.send(user);
     } else {
       res.status(401).send('Email o contraseña incorrectos');
     }
@@ -23,7 +22,6 @@ const sessionLogin = async (req,res)=>{
 const loginRegister = async (req,res)=>{
   try {
       const {firstName,lastName, email, password} = req.body
-             
       if (email === "adminCoder@coder.com"){
         const userAdmin = {
         firstName:firstName,

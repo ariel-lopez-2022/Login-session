@@ -1,7 +1,7 @@
 const btnLogout = document.getElementById('logout');
-
-
+   
     btnLogout.addEventListener('click', () => {
+        
         Swal.fire({
             title: 'Esta por Cerrar Session',
             text: "Esta Seguro?",
@@ -12,6 +12,7 @@ const btnLogout = document.getElementById('logout');
             confirmButtonText: 'Yes'
           }).then((result) => {
             if (result.isConfirmed) {
+                
                 location.assign("http://localhost:8080/login");
                  
             }

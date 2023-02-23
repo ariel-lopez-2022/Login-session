@@ -10,19 +10,7 @@ loginForm.addEventListener('submit', (e) => {
   })
   .then((res) => res.json())
   .then((data) => {
-    Swal.fire({
-      title: `Bienvenido ${data.firstName}`,
-      icon: 'warning',
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'OK'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        
-       // res.render('products', {data}) esto me da error por que no esta res definido
         window.location.href = '/products';
-        
-      }
     })
  
    
@@ -40,4 +28,3 @@ loginForm.addEventListener('submit', (e) => {
       }
     })
   });
-});
