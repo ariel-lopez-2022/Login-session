@@ -41,14 +41,14 @@ const addRealTimeProduct = async (req, res)=>{
 const renderChats =(req, res)=>{
     res.render('chats')
 }
+const registerLogin = async(req, res)=>{
+   res.render('viewregister')
+}
 
 const userLogin = async(req, res)=>{
   res.render('viewlogin')
 }
 
-const registerLogin = async(req, res)=>{
-   res.render('viewregister')
-}
 
 
 module.exports ={
@@ -57,6 +57,6 @@ module.exports ={
    deleteRealTimeProduct,
    addRealTimeProduct,
    renderChats,
+   registerLogin,
    userLogin,
-   registerLogin
 }
